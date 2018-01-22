@@ -76,6 +76,7 @@
 		9BB5610F1F8DE917007FA0ED /* ServiceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB5610E1F8DE917007FA0ED /* ServiceFactory.m */; };
 		9BB561181F8F4D0D007FA0ED /* SessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB561171F8F4D0D007FA0ED /* SessionManager.m */; };
 		9BB5611D1F90537E007FA0ED /* HttpProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB5611C1F90537E007FA0ED /* HttpProxy.m */; };
+		9BB941312015E0C800FA9A6A /* BasicAnimaDemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB941302015E0C800FA9A6A /* BasicAnimaDemoController.m */; };
 		9BBBFD571F0240A800F533B8 /* EmojiCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBBFD561F0240A800F533B8 /* EmojiCheck.m */; };
 		9BC4470C1FF484D70079FF75 /* MSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC4470B1FF484D70079FF75 /* MSWebViewController.m */; };
 		9BC4470E1FF4E4410079FF75 /* mjd in Resources */ = {isa = PBXBuildFile; fileRef = 9BC4470D1FF4E4410079FF75 /* mjd */; };
@@ -294,6 +295,8 @@
 		9BB561191F8F505B007FA0ED /* IUITestProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IUITestProtocol.h; sourceTree = "<group>"; };
 		9BB5611B1F90537E007FA0ED /* HttpProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpProxy.h; sourceTree = "<group>"; };
 		9BB5611C1F90537E007FA0ED /* HttpProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HttpProxy.m; sourceTree = "<group>"; };
+		9BB9412F2015E0C700FA9A6A /* BasicAnimaDemoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicAnimaDemoController.h; sourceTree = "<group>"; };
+		9BB941302015E0C800FA9A6A /* BasicAnimaDemoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicAnimaDemoController.m; sourceTree = "<group>"; };
 		9BBBFD551F0240A800F533B8 /* EmojiCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmojiCheck.h; sourceTree = "<group>"; };
 		9BBBFD561F0240A800F533B8 /* EmojiCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmojiCheck.m; sourceTree = "<group>"; };
 		9BC4470A1FF484D60079FF75 /* MSWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSWebViewController.h; sourceTree = "<group>"; };
@@ -940,6 +943,15 @@
 			name = httpproxy;
 			sourceTree = "<group>";
 		};
+		9BB9412E2015E0B700FA9A6A /* animation */ = {
+			isa = PBXGroup;
+			children = (
+				9BB9412F2015E0C700FA9A6A /* BasicAnimaDemoController.h */,
+				9BB941302015E0C800FA9A6A /* BasicAnimaDemoController.m */,
+			);
+			name = animation;
+			sourceTree = "<group>";
+		};
 		9BC6D3B61E543469006CEFF7 /* blur */ = {
 			isa = PBXGroup;
 			children = (
@@ -1161,6 +1173,7 @@
 		C931FF071E8D00980080EEFF /* basic_knowledge */ = {
 			isa = PBXGroup;
 			children = (
+				9BB9412E2015E0B700FA9A6A /* animation */,
 				9BFF82C41ED8224A00CECF19 /* layer */,
 				C931FEE21E8CEA270080EEFF /* view */,
 				C931FF061E8D006E0080EEFF /* layout */,
@@ -1506,6 +1519,7 @@
 				9BC6D3CD1E55741D006CEFF7 /* NextViewController.m in Sources */,
 				C931FF1A1E8D459B0080EEFF /* LayoutViewController.m in Sources */,
 				9BB561081F8DE7C2007FA0ED /* ServiceManager.m in Sources */,
+				9BB941312015E0C800FA9A6A /* BasicAnimaDemoController.m in Sources */,
 				9B651C971EA4B875007A8C50 /* UIDevice+Add.m in Sources */,
 				9B651C9A1EA4B8AB007A8C50 /* UIImage+color.m in Sources */,
 				9BCCF59F1EE958BB0059AB5B /* MSCircleProgressView.m in Sources */,
