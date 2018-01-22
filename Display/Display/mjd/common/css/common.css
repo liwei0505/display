@@ -1,0 +1,21 @@
+body{
+    background-color: #F5F5F5;
+}
+/*头部*/
+.headcont{
+    padding-top: 0.4rem;
+    background: #FAFAFA;
+    box-shadow: 0 2px 4px 0 rgba(0,26,51,0.20);
+}
+.headcont h1{
+    height: 0.8rem;
+    line-height:0.8rem;
+    text-align: center;
+    border-top: 1px solid   #F5F5F6;
+    position: relative;
+    font-size: 18px;
+}
+.headcont h1 a{
+    position: absolute;
+    left: 0.32rem;
+}
