@@ -23,7 +23,8 @@
     [navigationBar setBarTintColor:[UIColor cyanColor]];
     NSDictionary *attributes = @{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont fontWithName:@"AmericanTypewriter" size:15]};
     [navigationBar setTitleTextAttributes:attributes];
-    
+    [navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    [navigationBar setShadowImage:[UIImage new]];
     self.interactivePopGestureRecognizer.delegate = self;
 }
 
