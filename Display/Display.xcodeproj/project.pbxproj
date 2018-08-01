@@ -13,6 +13,7 @@
 		9B33B524200EF40F00C46346 /* UploadImageUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B33B523200EF40F00C46346 /* UploadImageUtils.m */; };
 		9B35AAA91EF0C2DF00F11F94 /* PoperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B35AAA81EF0C2DF00F11F94 /* PoperViewController.m */; };
 		9B59584A1F9D82690079C7C7 /* FingerprintUnlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5958491F9D82690079C7C7 /* FingerprintUnlock.m */; };
+		9B63DC4F20E4FE1F006EE651 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B63DC4E20E4FE1E006EE651 /* SearchViewController.m */; };
 		9B651C831EA45D6F007A8C50 /* ProgressView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B651C821EA45D6F007A8C50 /* ProgressView2.m */; };
 		9B651C901EA4AA72007A8C50 /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B651C8F1EA4AA72007A8C50 /* GradientView.m */; };
 		9B651C941EA4B7CA007A8C50 /* NSDate+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B651C931EA4B7CA007A8C50 /* NSDate+Add.m */; };
@@ -172,6 +173,8 @@
 		9B35AAA81EF0C2DF00F11F94 /* PoperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PoperViewController.m; sourceTree = "<group>"; };
 		9B5958481F9D82690079C7C7 /* FingerprintUnlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FingerprintUnlock.h; sourceTree = "<group>"; };
 		9B5958491F9D82690079C7C7 /* FingerprintUnlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FingerprintUnlock.m; sourceTree = "<group>"; };
+		9B63DC4D20E4FE1E006EE651 /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		9B63DC4E20E4FE1E006EE651 /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		9B651C811EA45D6F007A8C50 /* ProgressView2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressView2.h; sourceTree = "<group>"; };
 		9B651C821EA45D6F007A8C50 /* ProgressView2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressView2.m; sourceTree = "<group>"; };
 		9B651C851EA46A4D007A8C50 /* Display-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Display-Prefix.pch"; sourceTree = "<group>"; };
@@ -793,6 +796,8 @@
 				9B76EC5C1EA05F6C00E01F23 /* SubViewController1.m */,
 				C9C46C5C1EA35D0D007EDA36 /* Sub1ViewCell.h */,
 				C9C46C5D1EA35D0D007EDA36 /* Sub1ViewCell.m */,
+				9B63DC4D20E4FE1E006EE651 /* SearchViewController.h */,
+				9B63DC4E20E4FE1E006EE651 /* SearchViewController.m */,
 			);
 			name = items;
 			sourceTree = "<group>";
@@ -1485,6 +1490,7 @@
 				9B7D057D1FB00B8000E41BAE /* UIView+Toast.m in Sources */,
 				9B85D9F91ED95021004660E7 /* UIColor+StringColor.m in Sources */,
 				9BB5611D1F90537E007FA0ED /* HttpProxy.m in Sources */,
+				9B63DC4F20E4FE1F006EE651 /* SearchViewController.m in Sources */,
 				9B76EC5D1EA05F6C00E01F23 /* SubViewController1.m in Sources */,
 				9BA1D7751E53E8B20027F2F9 /* ViewController.m in Sources */,
 				9BA1D7971E53FD810027F2F9 /* XWCurrentViewController.m in Sources */,

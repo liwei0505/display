@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface Sub1ViewCell : UITableViewCell
-+ (Sub1ViewCell *)cellWithTableView:(UITableView *)tableView;
+//+ (Sub1ViewCell *)cellWithTableView:(UITableView *)tableView;
 @property (assign, nonatomic) CGFloat progress;
 @end

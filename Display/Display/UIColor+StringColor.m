@@ -10,6 +10,9 @@
 
 @implementation UIColor (StringColor)
 
++ (UIColor *)getColorFromHex:(int)hexColor {
+    return [UIColor colorWithRed:((hexColor >> 16) & 0xFF) / 255.0 green:((hexColor >>  8) & 0xFF) / 255.0 blue:((hexColor >>  0) & 0xFF) / 255.0 alpha:((hexColor >> 24) & 0xFF) / 255.0];
+}
 
 + (UIColor *)ms_colorWithHexString:(NSString *)hexString
 {

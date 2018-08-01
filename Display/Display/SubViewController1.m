@@ -11,6 +11,8 @@
 #import "ProgressView.h"
 #import "Sub1ViewCell.h"
 
+static NSString *reuseId = @"Sub1ViewCell";
+
 @interface SubViewController1 ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) UIScrollView *scrollView;
 @property (strong, nonatomic) WaterRipple *water;
@@ -63,11 +65,6 @@
     [self.scrollView addSubview:progressView];
     progressView.progress = 50;
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 80, self.view.bounds.size.width, self.view.bounds.size.height-50) style:UITableViewStylePlain];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    self.tableView.rowHeight = 50;
-    self.tableView.backgroundColor = [UIColor whiteColor];
     [self.scrollView addSubview:self.tableView];
     
 }
@@ -85,7 +82,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    Sub1ViewCell *cell = [Sub1ViewCell cellWithTableView:tableView];
+    Sub1ViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseId forIndexPath:indexPath];
     cell.progress = [self.dataArray[indexPath.row] doubleValue];
     return cell;
 }
@@ -105,6 +102,18 @@
 }
 
 #pragma mark - private
+
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 80, self.view.bounds.size.width, self.view.bounds.size.height-50) style:UITableViewStylePlain];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.rowHeight = 50;
+        _tableView.backgroundColor = [UIColor whiteColor];
+        [_tableView registerClass:[Sub1ViewCell class] forCellReuseIdentifier:reuseId];
+    }
+    return _tableView;
+}
 
 - (NSMutableArray *)dataArray {//0-20 间隔0.2
     if (!_dataArray) {

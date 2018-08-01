@@ -14,11 +14,12 @@
 #import "SubViewController1.h"
 #import "WaterFlowLayoutController.h"
 
-@interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface ViewController ()<UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchBarDelegate>
 
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) NSArray *list;
-
+@property (strong, nonatomic) UISearchController *searchController;
+@property (strong, nonatomic) NSMutableArray *result;
 @end
 
 @implementation ViewController
@@ -30,64 +31,82 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
 */
     [self prepareUI];
-    [self headerView];
+//    [self headerView];
+    [self searchView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    if (self.tabBarController.selectedIndex == 0) {
-        [self.navigationController setNavigationBarHidden:YES animated:YES];
-    } else {
-        [self.navigationController setNavigationBarHidden:YES animated:NO];
-    }
+//    [self.navigationController setNavigationBarHidden:YES animated:!self.tabBarController.selectedIndex];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    if (self.tabBarController.selectedIndex == 0) {
-        [self.navigationController setNavigationBarHidden:NO animated:NO];
-    } else {
-        [self.navigationController setNavigationBarHidden:NO animated:YES];
-    }
+//    [self.navigationController setNavigationBarHidden:YES animated:self.tabBarController.selectedIndex];
 }
 
 - (void)prepareUI {
 
-    self.navigationController.navigationBar.alpha = 0.0;
-    self.automaticallyAdjustsScrollViewInsets = NO;//不设置tableview会下沉一块
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.list = @[@"WaterFlow",@"PatternLock(UIButton)",@"BlurHeaderTableView",@"ChangeSkin",@"water-progressview"];
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height-44-64) style:UITableViewStylePlain];
-    self.tableView.backgroundColor = [UIColor whiteColor];
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
+//    self.navigationController.navigationBar.alpha = 0.0;
+//    self.automaticallyAdjustsScrollViewInsets = NO;//不设置tableview会下沉一块
+//    self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
     
 }
 
 - (void)headerView {
-    
     MSScrollView *headerView = [[MSScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.width * 590.f / 1080.f)];
     headerView.bannerList = @[@"pic",@"pic-2",@"banner"];
     self.tableView.tableHeaderView = headerView;
 }
 
+- (void)searchView {
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    self.searchController.searchResultsUpdater = self;
+    self.searchController.dimsBackgroundDuringPresentation = NO;
+    self.searchController.hidesNavigationBarDuringPresentation = YES;
+    self.tableView.tableHeaderView = self.searchController.searchBar;
+}
+
+#pragma mark - delegate
+//被电击高亮之前就调用
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        return nil;
+    }
+    return indexPath;
+}
+
+//指定缩进某些行
+- (NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return indexPath.row;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (self.searchController.active) {
+        return self.result.count;
+    }
     return self.list.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    if (self.searchController.active) {
+        cell.textLabel.text = self.result[indexPath.row];
+    } else {
+        cell.textLabel.font = [UIFont fontWithName:@"AmericanTypewriter" size:15];
+        cell.textLabel.text = self.list[indexPath.row];
     }
-    cell.textLabel.font = [UIFont fontWithName:@"AmericanTypewriter" size:15];
-    cell.textLabel.text = self.list[indexPath.row];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (self.searchController.active) {
+        return;
+    }
+    
     switch (indexPath.row) {
         case 0: {
             WaterFlowLayoutController *waterFlow = [[WaterFlowLayoutController alloc] init];
@@ -115,10 +134,55 @@
             [self.navigationController pushViewController:sub1 animated:YES];
             break;
         }
+        case 5: {
+            UISearchController *s = [[UISearchController alloc] init];
+            [self.navigationController pushViewController:s animated:YES];
+            return;
+        }
             
         default:
             break;
     }
+}
+
+#pragma mark - searchBar
+//自定义导航栏需要自己实现隐藏导航栏的动画效果 利用这两个代理方法实现
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    
+}
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+    
+}
+
+#pragma mark - searchContoller
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    NSString *inputS = searchController.searchBar.text;
+    if (self.result.count) {
+        [self.result removeAllObjects];
+    }
+    /*
+    for (NSString *str in self.list) {
+        if ([str.lowercaseString rangeOfString:inputS.lowercaseString].location != NSNotFound) {
+            [self.result addObject:str];
+        }
+    }
+     */
+    
+    /**/
+    
+    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id  _Nullable evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
+        NSRange range = [evaluatedObject rangeOfString:searchController.searchBar.text options:NSCaseInsensitiveSearch];
+        return range.location != NSNotFound;
+    }];
+    for (NSString *str in self.list) {
+        NSArray *matches = [self.list filteredArrayUsingPredicate:predicate];
+        [self.result addObjectsFromArray:matches];
+    }
+    
+    [self.tableView reloadData];
 }
 
 - (UIViewController *)childViewControllerForStatusBarStyle {
@@ -128,6 +192,33 @@
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
+}
+
+#pragma mark - lazy
+
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height-44-64) style:UITableViewStylePlain];
+        _tableView.backgroundColor = [UIColor whiteColor];
+        _tableView.dataSource = self;
+        _tableView.delegate = self;
+        [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    }
+    return _tableView;
+}
+
+- (NSMutableArray *)result {
+    if (!_result) {
+        _result = [NSMutableArray array];
+    }
+    return _result;
+}
+
+- (NSArray *)list {
+    if (!_list) {
+        _list = @[@"WaterFlow",@"PatternLock(UIButton)",@"BlurHeaderTableView",@"ChangeSkin",@"water-progressview",@"searchController"];
+    }
+    return _list;
 }
 
 @end
