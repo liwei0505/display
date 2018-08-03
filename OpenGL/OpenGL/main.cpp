@@ -45,19 +45,13 @@ void SpeacialKeys(int key, int x, int y) {
     //步长
     GLfloat stepSize = 0.025f;
     /*xpos ypos 利用矩阵实现*/
-//    GLfloat blockX = vVerts[0];
-//    GLfloat blockY = vVerts[10];
     if (key == GLUT_KEY_UP) {
-//        blockY += stepSize;
         yPos += stepSize;
     } else if (key == GLUT_KEY_DOWN) {
-//        blockY -= stepSize;
         yPos -= stepSize;
     } else if (key == GLUT_KEY_LEFT) {
-//        blockX -= stepSize;
         xPos -= stepSize;
     } else if (key == GLUT_KEY_RIGHT) {
-//        blockX += stepSize;
         xPos += stepSize;
     } else {
         printf("方向错误");
@@ -76,35 +70,6 @@ void SpeacialKeys(int key, int x, int y) {
     if (yPos > 1.0f - blockSize) {
         yPos = 1.0f - blockSize;
     }
-    
-/*
-    if (blockX<-1.0f) {
-        blockX = -1.0f;
-    }
-    if (blockX>1.0f-2*blockSize) {
-        blockX = 1.0f-2*blockSize;
-    }
-    if (blockY<-1.0f+2*blockSize) {
-        blockY = -1.0f+2*blockSize;
-    }
-    if (blockY > 1.0f) {
-        blockY = 1.0f;
-    }
-    
-    //根据d点计算其他点
-    //d
-    vVerts[9] = blockX;
-    vVerts[10] = blockY;
-    //a
-    vVerts[0] = blockX;
-    vVerts[1] = blockY - 2*blockSize;
-    //b
-    vVerts[3] = blockX + 2*blockSize;
-    vVerts[4] = blockY - 2*blockSize;
-    //c
-    vVerts[6] = blockX + 2*blockSize;
-    vVerts[7] = blockY;
-*/
     //移动
     triangleBatch.CopyVertexData3f(vVerts);
     glutPostRedisplay();
