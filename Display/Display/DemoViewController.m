@@ -12,6 +12,7 @@
 #import "MSSliderView.h"
 #import <QuartzCore/QuartzCore.h>
 #import "AppDelegate.h"
+#import "UILabel+Gradient.h"
 
 @interface DemoViewController ()
 @property (strong, nonatomic) UIButton *button;
@@ -22,7 +23,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
 //    [self testSlider];
+    
+    UILabel* testLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 200, 400, 50)];
+    testLabel.text = @"文字渐变Demo";
+    testLabel.font = [UIFont systemFontOfSize:30];
+    [self.view addSubview:testLabel];
+    [testLabel gradientColors:@[(id)[UIColor redColor].CGColor, (id)[UIColor greenColor].CGColor] startPoint:CGPointMake(0, 0) endPoint:CGPointMake(1, 0)];
 
 }
 

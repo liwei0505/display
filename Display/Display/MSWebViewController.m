@@ -78,10 +78,10 @@
 }
 
 #pragma mark - Public
-+ (MSWebViewController *)load {
-    MSWebViewController *webVC = [[MSWebViewController alloc] init];
-    return webVC;
-}
+//+ (MSWebViewController *)load {
+//    MSWebViewController *webVC = [[MSWebViewController alloc] init];
+//    return webVC;
+//}
 
 - (void)payUrl:(NSString *)url payCompletion:(void (^)(void))payCompletion {
     self.payCompletion = payCompletion;

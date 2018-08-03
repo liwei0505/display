@@ -10,6 +10,7 @@
 		817D31791131C7A3702FA33E /* libPods-Display.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A7B36F72E059469B8F816EE /* libPods-Display.a */; };
 		9B12D1B31E5C1A59004AD234 /* MSAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B12D1B21E5C1A59004AD234 /* MSAlert.m */; };
 		9B12D1B61E5C1BEA004AD234 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B12D1B51E5C1BEA004AD234 /* ProgressView.m */; };
+		9B152A94211423B100255E56 /* UILabel+Gradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B152A93211423B100255E56 /* UILabel+Gradient.m */; };
 		9B33B524200EF40F00C46346 /* UploadImageUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B33B523200EF40F00C46346 /* UploadImageUtils.m */; };
 		9B35AAA91EF0C2DF00F11F94 /* PoperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B35AAA81EF0C2DF00F11F94 /* PoperViewController.m */; };
 		9B59584A1F9D82690079C7C7 /* FingerprintUnlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5958491F9D82690079C7C7 /* FingerprintUnlock.m */; };
@@ -167,6 +168,8 @@
 		9B12D1B21E5C1A59004AD234 /* MSAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSAlert.m; sourceTree = "<group>"; };
 		9B12D1B41E5C1BEA004AD234 /* ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
 		9B12D1B51E5C1BEA004AD234 /* ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
+		9B152A92211423B000255E56 /* UILabel+Gradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Gradient.h"; sourceTree = "<group>"; };
+		9B152A93211423B100255E56 /* UILabel+Gradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Gradient.m"; sourceTree = "<group>"; };
 		9B33B522200EF40F00C46346 /* UploadImageUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UploadImageUtils.h; sourceTree = "<group>"; };
 		9B33B523200EF40F00C46346 /* UploadImageUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UploadImageUtils.m; sourceTree = "<group>"; };
 		9B35AAA71EF0C2DF00F11F94 /* PoperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoperViewController.h; sourceTree = "<group>"; };
@@ -571,6 +574,8 @@
 		9B651C911EA4B7BC007A8C50 /* categry */ = {
 			isa = PBXGroup;
 			children = (
+				9B152A92211423B000255E56 /* UILabel+Gradient.h */,
+				9B152A93211423B100255E56 /* UILabel+Gradient.m */,
 				9B9BDAD31F1F3B5600E6228B /* UIView+FrameUtil.m */,
 				9B9BDAD21F1F3B5600E6228B /* UIView+FrameUtil.h */,
 				9B85D9F71ED95021004660E7 /* UIColor+StringColor.h */,
@@ -1489,6 +1494,7 @@
 				9B59584A1F9D82690079C7C7 /* FingerprintUnlock.m in Sources */,
 				9B7D057D1FB00B8000E41BAE /* UIView+Toast.m in Sources */,
 				9B85D9F91ED95021004660E7 /* UIColor+StringColor.m in Sources */,
+				9B152A94211423B100255E56 /* UILabel+Gradient.m in Sources */,
 				9BB5611D1F90537E007FA0ED /* HttpProxy.m in Sources */,
 				9B63DC4F20E4FE1F006EE651 /* SearchViewController.m in Sources */,
 				9B76EC5D1EA05F6C00E01F23 /* SubViewController1.m in Sources */,
