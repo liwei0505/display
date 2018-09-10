@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AM2-uu-gtR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AM2-uu-gtR">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,15 +32,15 @@
                                             <action selector="topLine:" destination="AM2-uu-gtR" eventType="touchUpInside" id="Doc-DC-qts"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNn-FW-MZv">
-                                        <rect key="frame" x="281" y="7" width="94" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNn-FW-MZv">
+                                        <rect key="frame" x="234" y="7" width="141" height="30"/>
                                         <state key="normal" title="测试4"/>
                                         <connections>
                                             <action selector="life:" destination="AM2-uu-gtR" eventType="touchUpInside" id="bh2-TN-3nT"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PG3-Vb-bqm">
-                                        <rect key="frame" x="188" y="7" width="94" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PG3-Vb-bqm">
+                                        <rect key="frame" x="94" y="7" width="141" height="30"/>
                                         <state key="normal" title="测试3"/>
                                         <connections>
                                             <action selector="people:" destination="AM2-uu-gtR" eventType="touchUpInside" id="te6-Zk-TvQ"/>
@@ -49,9 +49,12 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.90093398089999999" green="0.64419913289999997" blue="0.91626721619999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="QNn-FW-MZv" secondAttribute="trailing" id="04b-Mz-ACL"/>
                                     <constraint firstItem="QNn-FW-MZv" firstAttribute="leading" secondItem="PG3-Vb-bqm" secondAttribute="trailing" constant="-1" id="B29-M8-Cbs"/>
+                                    <constraint firstItem="PG3-Vb-bqm" firstAttribute="leading" secondItem="Jjr-Cb-CYX" secondAttribute="trailing" id="Cyn-IJ-DzD"/>
                                     <constraint firstAttribute="height" constant="44" id="Fzj-VL-Vow"/>
                                     <constraint firstItem="Jjr-Cb-CYX" firstAttribute="leading" secondItem="jop-JE-KDH" secondAttribute="leading" id="Hz3-iN-n7f"/>
+                                    <constraint firstItem="PG3-Vb-bqm" firstAttribute="baseline" secondItem="Jjr-Cb-CYX" secondAttribute="baseline" id="IcV-tt-pmc"/>
                                     <constraint firstItem="QNn-FW-MZv" firstAttribute="centerY" secondItem="PG3-Vb-bqm" secondAttribute="centerY" id="MaR-Vg-S2k"/>
                                     <constraint firstItem="Jjr-Cb-CYX" firstAttribute="width" secondItem="jop-JE-KDH" secondAttribute="width" multiplier="0.25" id="kB4-F5-r1l"/>
                                     <constraint firstItem="Jjr-Cb-CYX" firstAttribute="centerY" secondItem="jop-JE-KDH" secondAttribute="centerY" id="ld9-6g-W9K"/>
@@ -61,9 +64,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9HV-hG-PHg" userLabel="contentView">
                                 <rect key="frame" x="0.0" y="108" width="375" height="559"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W98-4F-YI6">
-                                        <rect key="frame" x="334" y="127" width="94" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W98-4F-YI6">
+                                        <rect key="frame" x="164.5" y="264.5" width="46" height="30"/>
                                         <state key="normal" title="折线图"/>
                                         <connections>
                                             <action selector="current:" destination="AM2-uu-gtR" eventType="touchUpInside" id="Yhp-r4-yN9"/>
@@ -71,6 +73,10 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="W98-4F-YI6" firstAttribute="centerY" secondItem="9HV-hG-PHg" secondAttribute="centerY" id="Sa6-UQ-Cby"/>
+                                    <constraint firstItem="W98-4F-YI6" firstAttribute="centerX" secondItem="9HV-hG-PHg" secondAttribute="centerX" id="tBg-wl-CfF"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
