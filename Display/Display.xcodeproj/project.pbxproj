@@ -18,6 +18,7 @@
 		9B6302CA21462049008A7FCB /* UIView+HitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6302C921462049008A7FCB /* UIView+HitTest.m */; };
 		9B6302D02147A705008A7FCB /* NSString+MD5Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6302CC2147A704008A7FCB /* NSString+MD5Addition.m */; };
 		9B6302D12147A705008A7FCB /* UIDevice+IdentifierAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6302CF2147A705008A7FCB /* UIDevice+IdentifierAddition.m */; };
+		9B630302214A2677008A7FCB /* BigImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B630301214A2677008A7FCB /* BigImageController.m */; };
 		9B63DC4F20E4FE1F006EE651 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B63DC4E20E4FE1E006EE651 /* SearchViewController.m */; };
 		9B651C831EA45D6F007A8C50 /* ProgressView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B651C821EA45D6F007A8C50 /* ProgressView2.m */; };
 		9B651C901EA4AA72007A8C50 /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B651C8F1EA4AA72007A8C50 /* GradientView.m */; };
@@ -188,6 +189,8 @@
 		9B6302CD2147A705008A7FCB /* NSString+MD5Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5Addition.h"; sourceTree = "<group>"; };
 		9B6302CE2147A705008A7FCB /* UIDevice+IdentifierAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+IdentifierAddition.h"; sourceTree = "<group>"; };
 		9B6302CF2147A705008A7FCB /* UIDevice+IdentifierAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+IdentifierAddition.m"; sourceTree = "<group>"; };
+		9B630300214A2677008A7FCB /* BigImageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BigImageController.h; sourceTree = "<group>"; };
+		9B630301214A2677008A7FCB /* BigImageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BigImageController.m; sourceTree = "<group>"; };
 		9B63DC4D20E4FE1E006EE651 /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		9B63DC4E20E4FE1E006EE651 /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		9B651C811EA45D6F007A8C50 /* ProgressView2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressView2.h; sourceTree = "<group>"; };
@@ -548,6 +551,15 @@
 			name = uuid;
 			sourceTree = "<group>";
 		};
+		9B6302FF214A198A008A7FCB /* bigImage */ = {
+			isa = PBXGroup;
+			children = (
+				9B630300214A2677008A7FCB /* BigImageController.h */,
+				9B630301214A2677008A7FCB /* BigImageController.m */,
+			);
+			name = bigImage;
+			sourceTree = "<group>";
+		};
 		9B651C841EA465E3007A8C50 /* ProgressView */ = {
 			isa = PBXGroup;
 			children = (
@@ -717,6 +729,7 @@
 		9BA1D7841E53FC250027F2F9 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				9B6302FF214A198A008A7FCB /* bigImage */,
 				9B33B521200EF18A00C46346 /* popover */,
 				9B33B520200EEC3A00C46346 /* WebView */,
 				9BA8467E1FFC85F300869914 /* passwordInput */,
@@ -1517,6 +1530,7 @@
 				9BCE32261ECE8D3100A9F753 /* UIImageView+WebCache.m in Sources */,
 				9B651C9E1EA4CBF7007A8C50 /* ScanViewController.m in Sources */,
 				9B6302D02147A705008A7FCB /* NSString+MD5Addition.m in Sources */,
+				9B630302214A2677008A7FCB /* BigImageController.m in Sources */,
 				9BAE17FB1E64201C00A3B151 /* MSTabBarController.m in Sources */,
 				9B651C901EA4AA72007A8C50 /* GradientView.m in Sources */,
 				9BD479441E9F25EC00A70905 /* MSScrollView.m in Sources */,
